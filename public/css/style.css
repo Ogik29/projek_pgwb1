@@ -1,0 +1,31 @@
+.jumbotron{
+	padding: 6rem 1rem;
+	background-color: lightsalmon;
+	margin-bottom: 7rem;
+}
+
+#about{
+	margin-top: 7rem;
+	margin-bottom: 12rem;
+}
+
+#gallery{
+	margin-bottom: 7rem;
+}
+
+#contact{
+	padding: 6rem 2rem;
+	margin-bottom: 7rem;
+}
+
+footer a{
+	color: lightblue;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+section{
+	padding-top: 5rem;
+}
+
+
