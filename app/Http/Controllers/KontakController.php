@@ -64,7 +64,7 @@ class KontakController extends Controller
      */
     public function show($id)
     {
-        return view('admin.mastercontact.showContact', [
+        return view('admin.masterContact.showContact', [
             'siswa' => Siswa::find($id)
         ]);
     }

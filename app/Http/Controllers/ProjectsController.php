@@ -65,7 +65,7 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        return view('admin.masterprojects.showProject', [
+        return view('admin.masterProjects.showProject', [
             'siswa' => Siswa::find($id)
         ]);
     }
