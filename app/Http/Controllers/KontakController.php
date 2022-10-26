@@ -111,7 +111,7 @@ class KontakController extends Controller
      */
     public function destroy($id)
     {
-        Jenis_Kontak_Siswa::destroy('id', $id);
+        Jenis_Kontak_Siswa::destroy($id);
 
         return redirect('/mastercontact')->with('delete', 'Data Berhasil Dihapus');
     }
