@@ -77,7 +77,7 @@ class KontakController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.mastercontact.editContact', [
+        return view('admin.masterContact.editContact', [
             'kontak_siswa' => Jenis_Kontak_Siswa::find($id)
         ]);
     }

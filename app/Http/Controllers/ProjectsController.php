@@ -78,7 +78,7 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.masterprojects.editProject', [
+        return view('admin.masterProjects.editProject', [
             'projek' => Projek::firstWhere('id', $id)
         ]);
     }
@@ -116,6 +116,7 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
+        return $id;
         Projek::destroy('id', $id);
 
         return redirect('/masterprojects')->with('delete', 'Data Berhasil Dihapus');
