@@ -8,7 +8,7 @@ Profil
 
 <!-- Jumbotron (Bootstrap V4) -->
 <section class="jumbotron text-center">
-    <img src="{{ asset('img/gambar profil.jpg') }}" alt="Dimas Ogi" width="200" class="rounded-circle img-thumbnail">
+    <img src="{{ asset('img/Gambar profil.jpg') }}" alt="Dimas Ogi" width="200" class="rounded-circle img-thumbnail">
     <h1 class="display-4">Dimas Ogi Putra P</h1>
     <p class="lead">12 RPL 1/24</p>
 </section>
