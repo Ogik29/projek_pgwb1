@@ -116,8 +116,7 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        return $id;
-        Projek::destroy('id', $id);
+        Projek::destroy($id);
 
         return redirect('/masterprojects')->with('delete', 'Data Berhasil Dihapus');
     }
