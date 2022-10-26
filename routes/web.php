@@ -58,8 +58,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::delete('/mastercontact/{id}/delete_jenis', [KontakController::class, 'delete_jenis_kontak']);
 
-    Route::get('/masterprojects/{id}/show', [ProjectsController::class, 'show_new']);
-
     Route::get('/masterprojects/create/{id}', [ProjectsController::class, 'create']);
 
     Route::get('/mastercontact/create/{id}', [KontakController::class, 'create']);

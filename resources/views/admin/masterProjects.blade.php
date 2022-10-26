@@ -82,7 +82,7 @@
 
 <script>
     function show(id) {
-            $.get('/masterprojects/' + id + '/show', function(projek) {
+            $.get('/masterprojects/' + id, function(projek) {
                 $('#projek').html(projek);
             })
         }
