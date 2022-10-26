@@ -56,8 +56,15 @@ class SiswaController extends Controller
             'about' => 'required'
         ], $messages);
 
-        $validateData['foto'] = $request->file('foto')->store('siswa_img', ['disk' => 'public']);
+        // $validateData['foto'] = $request->file('foto')->store('siswa_img', ['disk' => 'public']);
         // isi parameter yg ada di function store() adalah nama folder yang ingin disimpan sebuah filenya
+
+        $file = $request->file('foto');
+        $nama_file = time() . '_' . $file->getClientOriginalName();
+
+        $file->move('img/', $nama_file);
+
+        $validateData['foto'] = $nama_file;
 
         Siswa::create($validateData);
         return redirect('/mastersiswa')->with('success', 'Berhasil Ditambahkan');
@@ -117,10 +124,19 @@ class SiswaController extends Controller
         ], $messages);
 
         // saat mengupdate foto baru maka file foto yang sebelumnya dari table siswa akan dihapus dari database maupun direktori
+        // if ($request->file('foto')) {
+        //     $validateData['foto'] = $request->file('foto')->store('siswa_img', ['disk' => 'public']);
+        //     Storage::disk('public')->delete($siswa->foto);
+        // }
+
         $siswa = Siswa::find($id);
-        if ($request->file('foto')) {
-            $validateData['foto'] = $request->file('foto')->store('siswa_img', ['disk' => 'public']);
-            Storage::disk('public')->delete($siswa->foto);
+
+        $file = $request->file('foto');
+        if ($file) {
+            $nama_file = time() . '_' . $file->getClientOriginalName();
+            $file->move('img/', $nama_file);
+            $validateData['foto'] = $nama_file;
+            unlink(public_path('img/' . $siswa->foto));
         }
 
         Siswa::where('id', $id)->update($validateData);
@@ -136,8 +152,8 @@ class SiswaController extends Controller
     public function destroy($id)
     {
         $siswa = Siswa::find($id);
-        Storage::disk('public')->delete($siswa->foto);
-        Siswa::destroy('id', $id);
+        unlink(public_path('img/' . $siswa->foto)); // untuk menghapus file
+        Siswa::destroy($id);
 
         return redirect('/mastersiswa')->with('delete', 'Berhasil Dihapus');
     }

@@ -16,7 +16,7 @@
 @section('content')
     <div class="row">
         <div class="card col-lg-3">
-            <img src="{{ asset('storage/'.$siswa->foto) }}" class="card-img-top" alt="...">
+            <img src="{{ asset('img/'.$siswa->foto) }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Nama: {{ $siswa->nama }}</h5>
               <p class="card-text">
