@@ -63,7 +63,7 @@ class ProjectsController extends Controller
      * @param  \App\Models\Projek  $projek
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show_new($id)
     {
         return view('admin.masterprojects.showProject', [
             'siswa' => Siswa::find($id)
