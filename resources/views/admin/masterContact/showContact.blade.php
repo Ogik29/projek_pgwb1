@@ -1,4 +1,4 @@
-@if ($siswa->kontak->isEmpty())
+{{-- @if ($siswa->kontak->isEmpty())
 
 Siswa Belum Memiliki Kontak
 
@@ -19,4 +19,5 @@ Siswa Belum Memiliki Kontak
     </div>
 </div>
 
-@endif
+@endif --}}
+<h1>adadsds</h1>
