@@ -146,7 +146,7 @@ class KontakController extends Controller
 
     public function edit_jenis_kontak($id)
     {
-        return view('admin.mastercontact.editContactType', [
+        return view('admin.masterContact.editContactType', [
             'jenis_kontak' => JenisKontak::find($id)
         ]);
     }
